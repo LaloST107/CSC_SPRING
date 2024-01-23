@@ -1,20 +1,24 @@
 package centro_soluciones.clicksoft.dto;
-
-import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import java.util.Date;
-//@JsonInclude(value = Include.NON_NULL)
+//JsonInclude nos sirve para quqe al momento de generar nuestro json no obtenga ningun dado null, lo que hace es que los ignora y no los muestra
+@JsonInclude(value = Include.NON_NULL)
+//Genera un patrón de diseño Builder para la construcción de instancias.
 @Builder
+//Genera un constructor sin argumentos. Útil cuando se necesita crear instancias vacías de la clase.
 @NoArgsConstructor
+//Genera un constructor que acepta todos los atributos de la clase como argumentos. Útil para la inicialización completa de instancias al crearlas.
 @AllArgsConstructor
 @Data
+//Construcción de nuestro DTO en el cual podemos hacer cambios ya sea en el tipo de dato o agregar algun nuevo campo
 public class FacturaDTO {
 
-    private Integer id;
+   private Integer id;
 
     private Integer folio;
 
@@ -34,14 +38,17 @@ public class FacturaDTO {
 
     private String categoriaFacturacion;
 
-    private Date fechaRecepcion;
+    private String fechaRecepcion;
 
-    private Date fechaPrimeraAtencion;
+    private String fechaPrimeraAtencion;
 
-    private Date fechaSolucion;
+    private String fechaSolucion;
 
-    private Date fechaCierre;
+    private String fechaCierre;
 
-    private Integer registroActivo;
+   private Integer registroActivo;
+
+
+
 
 }
