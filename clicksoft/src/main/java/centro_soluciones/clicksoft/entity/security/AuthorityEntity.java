@@ -1,4 +1,4 @@
-package centro_soluciones.clicksoft.entity.security;
-
-public class AuthorityEntity {
-}
+//package centro_soluciones.clicksoft.entity.security;
+//
+//public class AuthorityEntity {
+//}

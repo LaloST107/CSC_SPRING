@@ -1,14 +1,12 @@
 package centro_soluciones.clicksoft.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
+
 //Hacer referencia que es una entidad
 @Entity
 //Nombre de la tabla en la base de datos
@@ -24,23 +22,24 @@ public class UsuarioEntity {
    //   Se coloca un GeneratedValue para decirle que tendra in ID generado por una secuencia y le pasamos su nombre con el generator
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuarioIdSequence")
     @Column(name = "ID_USUARIO" , nullable = false)
-    Integer id;
+    private Integer id;
 
     @Column(name = "NOMBRE_USUARIO" , length = 50, nullable = false)
-    String nombreUsuario;
+    private String nombreUsuario;
 
     @Column(name = "APELLIDO_PATERNO" , length = 50, nullable = false)
-    String apellidoPaterno;
+    private String apellidoPaterno;
 
     @Column(name = "APELLIDO_MATERNO" , length = 50, nullable = false)
-    String apellidoMaterno;
+    private String apellidoMaterno;
 
     @Column(name = "CORREO_USUARIO" , length = 50, nullable = false)
-    String ccorreoUsuario;
+    private String ccorreoUsuario;
 
     @Column(name = "PASSWORD_USUARIO" , length = 50, nullable = false)
-    String passwordUsuario;
+    private String passwordUsuario;
 
     @Column(name = "ROL_USUARIO" , length = 50, nullable = false)
-    String rolUsuario;
+    private String rolUsuario;
+
 }
