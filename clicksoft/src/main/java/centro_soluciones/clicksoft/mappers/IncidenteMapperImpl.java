@@ -20,6 +20,7 @@ public class IncidenteMapperImpl implements IncidenteMapper{
         // Aqui se hace un mapeo manual, llamamos al IncidenteDTO y se le pone un builder para iniciar la construccion del mapeo
         return  IncidenteDTO.builder()
                 // Se obtienen los campos para mostrarlos en mediante Postman y frontend
+                .id(e.getId())
                 .nombreIncidente(e.getNombreIncidente())
                 .descripcionIncidente(e.getDescripcionIncidente())
                 // La fecha se convierte a string y se le da un formato
@@ -45,6 +46,7 @@ public class IncidenteMapperImpl implements IncidenteMapper{
         IncidenteEntity incidenteEntity = new IncidenteEntity();
 
         // Se hace un mapeo manual
+        incidenteEntity.setId(dto.getId());
         incidenteEntity.setNombreIncidente(dto.getNombreIncidente());
         incidenteEntity.setDescripcionIncidente(dto.getDescripcionIncidente());
         // A la fecha se le pasa el formatoDate creado para guardar la fecha en la base de datos
