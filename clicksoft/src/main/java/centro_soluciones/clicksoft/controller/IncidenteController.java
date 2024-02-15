@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/incidentes")
+@CrossOrigin("http://localhost:4200")
 public class IncidenteController {
 
     private final IncidenteService incidenteService;
