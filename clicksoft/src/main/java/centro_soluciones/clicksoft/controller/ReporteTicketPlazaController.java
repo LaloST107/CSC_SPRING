@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin("http://localhost:4200/")
 @RequestMapping("/api")
 public class ReporteTicketPlazaController {
 
@@ -19,7 +20,7 @@ public class ReporteTicketPlazaController {
     private ReporteTicketPlazaImpl reporteTicketPlazaImpl;
 
     //función para encontrar todos los tickets
-    @GetMapping(value = "/reportes")
+    @GetMapping(value = "/tickets")
     public List<ReporteTicketPlazaDTO> findAllTickets() throws ServiceException {
         return reporteTicketPlazaImpl.findAll();
     }
