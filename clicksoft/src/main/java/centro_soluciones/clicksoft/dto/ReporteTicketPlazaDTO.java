@@ -1,7 +1,8 @@
 package centro_soluciones.clicksoft.dto;
 
-import centro_soluciones.clicksoft.entity.UsuarioEntity;
-import jakarta.persistence.Column;
+import centro_soluciones.clicksoft.entity.User;
+//import centro_soluciones.clicksoft.entity.UsuarioEntity;
+//import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -39,6 +40,7 @@ public class ReporteTicketPlazaDTO {
 
     private Integer numRegistroAct;
 
-    private UsuarioEntity usuario;
+    private User usuario;
+//    private UsuarioEntity usuario;
 
 }

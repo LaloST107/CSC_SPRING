@@ -1,8 +1,18 @@
 package centro_soluciones.clicksoft.entity;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+//import javax.persistence.*;
 import lombok.Data;
-
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
 @Data
@@ -51,5 +61,6 @@ public class IncidenteEntity {
     */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ID_USUARIO", nullable = false)
-    private UsuarioEntity usuario;
+//    private UsuarioEntity usuario;
+    private User usuario;
 }

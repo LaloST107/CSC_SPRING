@@ -1,6 +1,7 @@
 package centro_soluciones.clicksoft.dto;
 
-import centro_soluciones.clicksoft.entity.UsuarioEntity;
+import centro_soluciones.clicksoft.entity.User;
+//import centro_soluciones.clicksoft.entity.UsuarioEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,6 +37,7 @@ public class IncidenteDTO {
 
     private Integer registroActivo;
 
-    private UsuarioEntity usuario;
+    private User usuario;
+//    private UsuarioEntity usuario;
 
 }

@@ -86,6 +86,11 @@ public class FacturaServiceImpl implements FacturaService {
 
     @Override
     public Optional<FacturaDTO> findById(Integer id) throws ServiceException {
-        return Optional.empty();
+       try {
+           Optional<FacturaEntity> facturaEntityId = facturaRepository.findById(id);
+           return facturaEntityId.map(facturaMapper::toDto);
+       }catch (Exception e) {
+           throw new ServiceException(e);
+       }
     }
 }

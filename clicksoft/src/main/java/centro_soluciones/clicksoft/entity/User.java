@@ -1,7 +1,8 @@
 package centro_soluciones.clicksoft.entity;
 
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -13,7 +14,7 @@ import java.util.List;
 @Table(name="USUARIOS")
 //Colocar Data para generar los get y set del entity
 @Data
-public class UsuarioEntity {
+public class User {
 
 
     @Id
@@ -22,7 +23,7 @@ public class UsuarioEntity {
    //   Se coloca un GeneratedValue para decirle que tendra in ID generado por una secuencia y le pasamos su nombre con el generator
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuarioIdSequence")
     @Column(name = "ID_USUARIO" , nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "NOMBRE_USUARIO" , length = 50, nullable = false)
     private String nombreUsuario;
@@ -34,12 +35,17 @@ public class UsuarioEntity {
     private String apellidoMaterno;
 
     @Column(name = "CORREO_USUARIO" , length = 50, nullable = false)
-    private String ccorreoUsuario;
+    private String correoUsuario;
 
     @Column(name = "PASSWORD_USUARIO" , length = 50, nullable = false)
     private String passwordUsuario;
 
-    @Column(name = "ROL_USUARIO" , length = 50, nullable = false)
-    private String rolUsuario;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "ROL_USUARIO" , nullable = false)
+//    private String rolUsuario;
+    private Role rolUsuario;
+
+    @Transient
+    private String token;
 
 }

@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "116e1137-8822-4e82-9f36-171b2f341406",
+		"name": "Seguridad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31522154"
+	},
+	"item": [
+		{
+			"name": "Seguridad-SignUp-Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreUsuario\": \"Roberto\",\r\n    \"apellidoPaterno\": \"Hernandez\",\r\n    \"apellidoMaterno\": \"Rojas\",\r\n    \"correoUsuario\": \"roberto@clicksoft.com.mx\",\r\n    \"passwordUsuario\": \"Roberto123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8585/api/authentication/sign-up"
+			},
+			"response": []
+		},
+		{
+			"name": "Seguridad-SignIn-Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreUsuario\": \"Roberto\",\r\n    \"passwordUsuario\": \"Roberto123\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8585/api/authentication/sign-in"
+			},
+			"response": []
+		},
+		{
+			"name": "Seguridad-Actualizar-Rol",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJKZXJlbUkgRG9rdSIsInJvbGVzIjoiUk9MRV9PcGVyYWRvciIsInVzZXJJZCI6NCwiZXhwIjoxNzA4MDk2OTE2fQ.jd7JhnEGJDgJHxi5A0nEBbOCEBz_tYQShiCnAZ__rUAJk6TLwvNgvEc6PErd2aEWrLzPp1s4QbI69UvYBOXQaA"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8585/api/user/change/Administrador",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"user",
+						"change",
+						"Administrador"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

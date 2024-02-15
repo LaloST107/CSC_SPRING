@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "9ce280ef-c732-4cb7-ba35-cd68e4365d88",
+		"name": "Factura",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31522154"
+	},
+	"item": [
+		{
+			"name": "Obtener-Facturas-IDyStatus",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8585/api/facturas"
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar-Factura",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"folio\": 6969,\r\n  \"status\": \"Abierto\",\r\n  \"casoReportado\": \"Problema MEX\",\r\n  \"categoriaSolucion\": \"Importante\",\r\n  \"categoriaProblema\": \"Urgente\",\r\n  \"correoCliente\": \"are@clicksoft.com\",\r\n  \"numeroFactura\": 555,\r\n  \"folioVenta\": \"TLX-25\",\r\n  \"categoriaFacturacion\": \"wo1\"\r\n\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8585/api/facturas/save"
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar-FacturaId",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8585/api/facturas/1"
+			},
+			"response": []
+		}
+	]
+}
