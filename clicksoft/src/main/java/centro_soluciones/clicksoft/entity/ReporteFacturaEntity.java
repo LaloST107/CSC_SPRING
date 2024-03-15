@@ -3,17 +3,10 @@ package centro_soluciones.clicksoft.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-
-import java.time.LocalDate;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+
 
 @Data
 @Entity(name = "ReporteFacturaT")
@@ -50,4 +43,7 @@ public class ReporteFacturaEntity {
     @Column(name ="ID_TICKET", nullable = false)
     private Integer idTicket;
 
+    @OneToMany(mappedBy = "idTicket", cascade = CascadeType.ALL, orphanRemoval = true)
+    //private ReporteTicketPlazaEntity ticket;
+    private List<ReporteTicketPlazaEntity> reporteTicketPlazas;
 }//end class

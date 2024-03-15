@@ -20,6 +20,7 @@ public class ReporteFacturaMapperImpl implements ReporteFacturaMapper{
     @Override
     public ReporteFacturaDTO toDto(ReporteFacturaEntity e) {
         return ReporteFacturaDTO.builder()
+                .id(e.getId())
                 .nombreReporte(e.getNombreReporte())
                 .descripcion(e.getDescripcion())
                 .fecha(String.valueOf(e.getFecha()).formatted(formato))
@@ -65,4 +66,5 @@ public class ReporteFacturaMapperImpl implements ReporteFacturaMapper{
                 .idTicket(e.getIdTicket())
                 .build();
     }
+
 }

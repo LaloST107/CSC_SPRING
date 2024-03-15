@@ -14,13 +14,10 @@ import org.springframework.stereotype.Service;
 
 
 import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import static java.util.Objects.isNull;
 
 
 @Service
@@ -93,9 +90,12 @@ public class ReporteFacturaServiceImpl implements ReporteFacturaService  {
 
                 reporteFactura.setNombreReporte(reporteFacturaDTO.getNombreReporte());
                 reporteFactura.setDescripcion(reporteFacturaDTO.getDescripcion());
-                reporteFactura.setFecha(new SimpleDateFormat(formatoFecha).parse(reporteFacturaDTO.getFecha()));
+                //reporteFactura.setFecha(new SimpleDateFormat(formatoFecha).parse(reporteFacturaDTO.getFecha()));
                 reporteFactura.setStatus(reporteFacturaDTO.getStatus());
-                reporteFactura.setIdTicket(reporteFacturaDTO.getIdTicket());
+                reporteFactura.setPlaza(reporteFacturaDTO.getPlaza());
+                reporteFactura.setTienda(reporteFacturaDTO.getTienda());
+                //reporteFactura.setTicket(reporteFacturaDTO.getTicket());
+                reporteFactura.setIdTicket(reporteFactura.getIdTicket());
 
                 ReporteFacturaEntity update = reporteFacturaRepository.save(reporteFactura);
 
@@ -119,21 +119,14 @@ public class ReporteFacturaServiceImpl implements ReporteFacturaService  {
 
     @Override
     public Optional<ReporteFacturaDTO> findById(Integer id) throws ServiceException {
-//        try {
-//            Optional<ReporteFacturaEntity> optionalReporteFacturaEntity = reporteFacturaRepository.findById(id);
-//
-//            if (optionalReporteFacturaEntity.isPresent()) {
-//                List<ReporteFacturaDTO> reporteIdDTO = new ArrayList<>();
-//                reporteIdDTO.add(reporteFacturaMapper.toDtoId(optionalReporteFacturaEntity.get()));
-//                return Optional.of(reporteIdDTO);
-//            } else {
-////                throw new ServiceException( String.format("El vendedor con el id= %s no existe"));
-//                return Optional.empty();
-//            }
-//        } catch (Exception e) {
-//            throw new ServiceException(e);
-//        }
-        return Optional.empty();
+        try {
+            Optional<ReporteFacturaEntity> optionalReporteFacturaEntity = reporteFacturaRepository.findById(id);
+
+            return optionalReporteFacturaEntity.map(reporteFacturaMapper::toDtoId);
+        } catch (Exception e) {
+            throw new ServiceException(e);
+        }
+//        return Optional.empty();
     }
 
 

@@ -21,6 +21,7 @@ public interface ReporteFacturaRepository extends JpaRepository<ReporteFacturaEn
     @Query(nativeQuery = true, value = "update REPORTE_TICKET set REGISTRO_ACTIVO = '0' where ID_REPORTE = :id")
     void deleteCustom(@Param("id") Integer id);
 
-    @Query("Select n from ReporteFacturaT n where n.nombreReporte LIKE :kw")
-    List<ReporteFacturaEntity> buscarNombre(@Param(value = "kw") String keyword);
+    @Query("Select f from ReporteFacturaT f where upper(f.nombreReporte) like concat('%', upper(:nombreReporte), '%') and f.registroActivo = 1")
+    List<ReporteFacturaEntity> buscarNombre(@Param("nombreReporte") String nombreReporte);
+    //List<ReporteFacturaEntity> buscarNombre(@Param(value = "kw") String keyword);
 }//end class

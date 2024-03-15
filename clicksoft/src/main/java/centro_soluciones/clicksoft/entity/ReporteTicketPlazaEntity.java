@@ -64,7 +64,12 @@ public class ReporteTicketPlazaEntity {
     //@ManyToOne
 //    @Column(name = "ID_USUARIO", nullable = false)
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "ID_USUARIO", nullable = false)
+    @JoinColumn(name = "ID_USUARIO")
     private User usuario;
     //UsuarioEntity
+
+    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "ID_TICKET", nullable = false)
+    private ReporteFacturaEntity reporteFactura;
+
 }

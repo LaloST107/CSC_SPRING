@@ -1,11 +1,15 @@
 package centro_soluciones.clicksoft.dto;
 
 
+import centro_soluciones.clicksoft.entity.ReporteFacturaEntity;
+import centro_soluciones.clicksoft.entity.ReporteTicketPlazaEntity;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
@@ -32,4 +36,9 @@ public class ReporteFacturaDTO {
     private Integer registroActivo;
 
     private Integer idTicket;
+
+    //private List<ReporteTicketPlazaDTO> reporteTicketPlazaDTOS;
+
+    //private ReporteTicketPlazaEntity ticket;
+
 }//end class

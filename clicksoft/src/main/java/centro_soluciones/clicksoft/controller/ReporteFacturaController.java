@@ -50,8 +50,8 @@ public class ReporteFacturaController {
     }
 
     @GetMapping("/reporte")
-    public List<ReporteFacturaDTO> buscarReporte(@RequestParam(name = "keyword", defaultValue = "") String keyword) {
-        return reporteFacturaService.getNombreReporte("%"+keyword+"%");
+    public List<ReporteFacturaDTO> buscarReporte(@RequestParam(name = "nombreReporte", defaultValue = "") String nombreReporte) {
+        return reporteFacturaService.getNombreReporte("%"+nombreReporte+"%");
     }
 
 
