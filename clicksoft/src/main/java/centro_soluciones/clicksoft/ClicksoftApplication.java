@@ -17,3 +17,4 @@ public class ClicksoftApplication {
 		SpringApplication.run(ClicksoftApplication.class, args);
 	}
 }
+	

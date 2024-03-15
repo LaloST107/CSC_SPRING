@@ -18,6 +18,7 @@ public class FacturaMapperImpl implements FacturaMapper{
 //En esta parte lo que hacemos es hacer el mapeo de manera manual, llamamos el FacturaDTO y le ponemos un BUILDER para hacer la construcción del mapeo
                 return  FacturaDTO.builder()
 //Obtenemos las variables o campos que vamos a ocupar para mostrarlos en el postman
+                .id(e.getId())
                 .folio(e.getFolio())
                 .status(e.getStatus())
                 .casoReportado(e.getCasoReportado())
@@ -57,7 +58,8 @@ public class FacturaMapperImpl implements FacturaMapper{
         facturaEntity.setCategoriaFacturacion(dto.getCategoriaFacturacion());
 //Para las fechas le pasamos el formatoDate creado para almacenarlo en la BD
         facturaEntity.setFechaRecepcion(formatoDate);
-        facturaEntity.setFechaPrimeraAtencion(formatoDate);
+        facturaEntity.setFechaPrimeraAtencion(null);
+//        facturaEntity.setFechaPrimeraAtencion(formatoDate);
 //Las demas fechas las dejamos como null ya que las ocuparemos después
         facturaEntity.setFechaSolucion(null);
         facturaEntity.setFechaCierre(null);

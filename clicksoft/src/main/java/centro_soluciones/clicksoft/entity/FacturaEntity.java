@@ -25,28 +25,28 @@ public class FacturaEntity {
     @Column(name="ID_FOLIO")
     private Integer id;
 
-    @Column(name = "FOLIO", nullable = false)
+    @Column(name = "FOLIO")
     private Integer folio;
 
-    @Column(name = "STATUS",  length = 50,  nullable = false)
+    @Column(name = "STATUS",  length = 50, nullable = false)
     private String status;
 
-    @Column(name = "CASO_REPORTADO" ,  length = 50,  nullable = false)
+    @Column(name = "CASO_REPORTADO" ,  length = 50)
     private String casoReportado;
 
-    @Column(name = "CATEGORIA_SOLUCION",  length = 50,  nullable = false)
+    @Column(name = "CATEGORIA_SOLUCION",  length = 50)
     private String categoriaSolucion;
 
-    @Column(name = "CATEGORIA_PROBLEMA",  length = 50,  nullable = false)
+    @Column(name = "CATEGORIA_PROBLEMA",  length = 50)
     private String categoriaProblema;
 
-    @Column(name = "CORREO_CLIENTE",  length = 50,  nullable = false)
+    @Column(name = "CORREO_CLIENTE",  length = 50)
     private String correoCliente;
 
-    @Column(name = "NUMERO_FACTURA", nullable = false)
+    @Column(name = "NUMERO_FACTURA")
     private Integer numeroFactura;
 
-    @Column(name = "FOLIO_VENTA", length = 50, nullable = false)
+    @Column(name = "FOLIO_VENTA", length = 50)
     private String folioVenta;
 
     @Column(name = "CATEGORIA_FACTURACION", length = 50, nullable = false)
@@ -55,7 +55,7 @@ public class FacturaEntity {
     @Column(name = "FECHA_RECEPCION", nullable = false)
     private Date fechaRecepcion;
 
-    @Column(name = "FECHA_PRIMER_ATENCION", nullable = false)
+    @Column(name = "FECHA_PRIMER_ATENCION")
     private Date fechaPrimeraAtencion;
 //Colocamos las fechas de cierre y se solucion sin ningun nullable ya que al guardarlas como null hace conflictos
     @Column(name = "FECHA_SOLUCION")
