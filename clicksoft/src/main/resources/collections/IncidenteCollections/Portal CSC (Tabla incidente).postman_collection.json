@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "be84b918-c229-4046-8d6c-debd3809b6fe",
+		"name": "Portal CSC (Tabla incidente)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32207658"
+	},
+	"item": [
+		{
+			"name": "Get Incidentes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8585/api/incidentes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"incidentes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8585/api/incidentes/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"incidentes",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddIncidentes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"nombreIncidente\": \"Nombre1\",\r\n   \"descripcionIncidente\": \"Descripcion1\",\r\n   \"direccionImagenIncidente\": \"Ruta1\",\r\n   \"status\": \"Liberado\",\r\n   \"impacto\": \"Alto\",\r\n   \"urgencia\": \"Urgente\",\r\n   \"prioridad\": \"Alta\",\r\n   \"prioridadExtra\": \"Extra\",\r\n   \"usuario\": {\r\n      \"id\": 1\r\n   }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8585/api/incidentes/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"incidentes",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteIncidente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8585/api/incidentes/delete/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"incidentes",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateIncidente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombreIncidente\": \"Error de servidor\",\r\n    \"descripcionIncidente\": \"Descripcion6\",\r\n    \"fechaIncidente\": \"2021-09-25 23:33:13.0\",\r\n    \"direccionImagenIncidente\": \"Ruta6\",\r\n    \"status\": \"Liberado\",\r\n    \"impacto\": \"Alto\",\r\n    \"urgencia\": \"Urgente\",\r\n    \"prioridad\": \"Alta\",\r\n    \"prioridadExtra\": \"Extra\",\r\n    \"usuario\": {\r\n      \"id\": 1\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8585/api/incidentes/update/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"incidentes",
+						"update",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ImagenBack",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8585/api/incidentes/images/clicksoft.png",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"incidentes",
+						"images",
+						"clicksoft.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add ImagenBack",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "imagen",
+							"type": "file",
+							"src": "/C:/Users/PC-ClickSoft/Downloads/clicksoft.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8585/api/incidentes/upload-image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8585",
+					"path": [
+						"api",
+						"incidentes",
+						"upload-image"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
